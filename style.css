@@ -3,12 +3,67 @@
     padding: 0;
     box-sizing: border-box;
 }
+@media (max-width:650px){
+    .grid-container{
+        grid-template-columns: 1fr 2fr;
+        background-color: rgb(248, 252, 143);
+    }
+    }
+    
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+      }
+      
+      @keyframes slideOut {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+      }
+      @keyframes Logo {
+        0% {
+            transform: rotateY(0deg);
+        }
+        100% {
+            transform: rotateY(360deg);
+        }
+      }
+    
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(245, 225, 220);
 }
 header{
     display: grid;
     grid-template-columns: 0.5fr 3fr;
+    background-color:  rgb(221, 212, 192);
+    margin: 2em;
+    border: ridge 0.3em saddlebrown;
+    animation: slideOut 2s;
+    border-radius: 20%;
+}
+header h1, header p{
+text-align: center;
+margin:1em;
+}
+header img{
+    background-color: aliceblue;
+    border-radius: 50%;
+    margin:1em 1em 2em 3em;
+    border:goldenrod ridge 0.3em;
+    animation: Logo 5s; 
+
+}
+header p{
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .container{
     margin: 0 auto;
@@ -16,17 +71,20 @@ header{
 }
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr ; /*fr significa fraccion*/
+    grid-template-columns: 1fr 1.5fr 1fr ; /*fr significa fraccion*/
     column-gap: 12px;/*column-gap es el espacio entre las columnas*/
+    row-gap: 20px;
+    background-color: rgb(221, 212, 192);
+    margin-bottom: 3em;
+    padding:0.5em;
 }
 .grid-container img, .grid-container video{
     width: 100%;
 }
-@media (max-width:650px){
-.container{
-    background-color: rgb(143, 252, 203);
-}
-.grid-container{
-    grid-template-columns: 1fr 2fr;
-}
+.resource{
+    background-color: rgb(255, 255, 255);
+    margin-left: 0.5em;
+    border: saddlebrown ridge 0.3em;
+    animation: slideIn 2s;
+    padding: 0.5em 0.5em 0.5em 0.5em;
 }
